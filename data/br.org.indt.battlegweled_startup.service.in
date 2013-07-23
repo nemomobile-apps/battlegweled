@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=br.org.indt.battlegweled_startup
-Exec=@prefix@/bin/battlegweled.sh

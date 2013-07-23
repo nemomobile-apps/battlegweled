@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=br.org.indt.battlegweled
-Exec=@wrapperdir@/games/battlegweled.l
