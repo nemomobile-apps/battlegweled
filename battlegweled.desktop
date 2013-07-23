@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Battle Gweled
+Exec=/opt/battlegweled/battlegweled
+Icon=/opt/battlegweled/pixmaps/battlegweled_32.png

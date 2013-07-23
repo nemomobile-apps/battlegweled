@@ -2,17 +2,29 @@
 #include <signal.h>
 #include <unistd.h>
 #include <errno.h>
-#include <SDL_net.h>
+//#include <SDL_net.h>
 #include "level.h"
 #include "images.h"
 #include "socket.h"
 
 SOCKET_STATE ss;
+
+SDL_Thread *ThreadAccept = NULL, *ThreadConnect = NULL;
+
+void write_socket(void *buffer, int len) {}
+int read_socket(void *buffer, int len) {}
+int accept_client(void *param) {}
+int create_game() {}
+int connect_server(void *param) {}
+int join_game(char *hostname) {}
+int multi_player_loop(void *param) {}
+
+#if 0
+
 int connected = false;
 IPaddress ipa;
 // struct sockaddr_in pin;
 TCPsocket SocketServer, sock;
-SDL_Thread *ThreadAccept = NULL, *ThreadConnect = NULL;
 
 // Send a buffer
 void write_socket(void *buffer, int len) {
@@ -239,3 +251,4 @@ int multi_player_loop(void *param) {
     ss = SS_CLOSE;
     return 0;
 }
+#endif

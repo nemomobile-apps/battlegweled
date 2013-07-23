@@ -1,8 +1,9 @@
 #ifndef _IMAGES_H_
 #define _IMAGES_H_
 
-#include <SDL/SDL.h>
-#include <SDL/SDL_thread.h>
+#include <SDL.h>
+#include <SDL_thread.h>
+#include "sdl12compat.h"
 
 #define BACK_OFFSETX        216
 #define BACK_OFFSETY        394

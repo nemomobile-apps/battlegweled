@@ -2,9 +2,9 @@
 #include <time.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <gconf/gconf.h>
-#include <gconf/gconf-client.h>
-#include <libosso.h>
+//#include <gconf/gconf.h>
+//#include <gconf/gconf-client.h>
+//#include <libosso.h>
 #include "level.h"
 #include "images.h"
 #include "socket.h"
@@ -15,7 +15,7 @@ HgwContext *hgw_context = NULL;
 #endif
 #include "callbacks.h"
 
-osso_context_t * osso_context = NULL;
+//osso_context_t * osso_context = NULL;
 GAMEMODE gm;
 SDL_mutex *mutex;
 GameState game_state;
@@ -84,20 +84,29 @@ int game_loop() {
                     break;
 
 		// Window focus change
+#if 0
 		case SDL_ACTIVEEVENT:
 		    if (event.active.gain == 0 && gm != GM_MULTIPLAYER) {
 		        game_state.state = GAME_EXIT;
 		    }
 		    break;
+#endif
                     
                 // Button pressed
                 case SDL_MOUSEBUTTONUP:
+                case SDL_FINGERUP:
                     no_unselect = 1;
                     if (game_state.state == UNSELECTED_FIRST) {
                         game_state.state = IDLE;
                         break;
                     }
                 case SDL_MOUSEBUTTONDOWN:
+                case SDL_FINGERDOWN:
+
+                    if (event.type == SDL_FINGERDOWN) {
+                        event.button.x = event.tfinger.x;
+                        event.button.y = event.tfinger.y;
+                    }
     
                     // Diamond area
                     if (event.button.x >= BOARD_OFFSETX 
@@ -203,18 +212,18 @@ int game_loop() {
 
 // Show and loop main menu
 void show_menu_loop() {
-    char *ip;
+    char *ip = "";
     FILE *han;
     SDL_Event event;
-    int createserver;
+    int createserver = 0;
     SDL_Thread *ReadThread;
-    GConfClient *gcc = NULL;
+    //GConfClient *gcc = NULL;
 
     // Init GConf
-    g_type_init();
-    gcc = gconf_client_get_default();
-    createserver = gconf_client_get_bool(gcc, BATTLEGWELED_CREATESERVER, NULL);
-    ip = gconf_client_get_string(gcc, BATTLEGWELED_SERVERIP, NULL);
+    //g_type_init();
+    //gcc = gconf_client_get_default();
+    //createserver = gconf_client_get_bool(gcc, BATTLEGWELED_CREATESERVER, NULL);
+    //ip = gconf_client_get_string(gcc, BATTLEGWELED_SERVERIP, NULL);
 
     // Single player
     if (!createserver && !strcmp(ip, "")) {
@@ -243,9 +252,10 @@ void show_menu_loop() {
 	        // If connected then start the game
 	        if (ss == SS_CONNECTED) {
 	            new_game(true, GM_MULTIPLAYER, false);
-	            ReadThread = SDL_CreateThread(multi_player_loop, NULL);
+	            ReadThread = SDL_CreateThread(multi_player_loop, "ReadThread", NULL);
 	            game_loop();
-	            SDL_KillThread(ReadThread);
+	            //SDL_KillThread(ReadThread);
+                    SDL_WaitThread(ReadThread, NULL);
 		    break;
                 }
 
@@ -253,8 +263,10 @@ void show_menu_loop() {
 			|| event.key.keysym.sym == SDLK_F4 || event.key.keysym.sym == SDLK_F5 || event.key.keysym.sym == SDLK_F6))
 			|| event.type == SDL_QUIT || (event.type == SDL_MOUSEBUTTONDOWN && event.button.x >= BACK_OFFSETX
 			&& event.button.y >= BACK_OFFSETY && event.button.x < BACK_OFFSETX2 && event.button.y < BACK_OFFSETY2)))) {
-			if (ThreadConnect) SDL_KillThread(ThreadConnect);
-                        if (ThreadAccept) SDL_KillThread(ThreadAccept);
+                        SDL_WaitThread(ThreadConnect, NULL);
+                        SDL_WaitThread(ThreadAccept, NULL);
+			//if (ThreadConnect) SDL_KillThread(ThreadConnect);
+                        //if (ThreadAccept) SDL_KillThread(ThreadAccept);
 			break;
                 }
 
