@@ -1,0 +1,16 @@
+
+Battle Gweled
+=============
+
+Fast action puzzle game
+
+Swap jewels' positions to build up rows and columns as quickly as you can. Play
+in single player mode or against another Maemo user over network. Based on the
+famous game Bejeweled.
+
+http://maemo.org/downloads/product/Maemo5/battlegweled/
+
+
+Original upstream source on which this port is based:
+http://repository.maemo.org/extras-devel/pool/fremantle-1.3/free/source/b/battlegweled/battlegweled_0.9-7.tar.gz
+
