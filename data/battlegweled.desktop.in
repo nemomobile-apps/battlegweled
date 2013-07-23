@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=@VERSION@
+Type=Application
+Name=Battle Gweled
+Exec=@prefix@/bin/battlegweled.sh
+Icon=battlegweled_32
+X-Window-Icon=battlegweled_32
+X-Window-Icon-Dimmed=battlegweled_32
+X-Osso-Service=br.org.indt.battlegweled_startup
+X-HildonDesk-ShowInToolbar=true
+StartupWMClass=battlegweled

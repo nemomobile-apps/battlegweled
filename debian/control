@@ -1,0 +1,88 @@
+Source: battlegweled
+Section: user/games
+Priority: optional
+Maintainer: Mikko Vartiainen <mvartiainen@gmail.com>
+XSBC-Original-Maintainer: Marcelo Lira
+Build-Depends: libhildon1-dev, libhildonfm2-dev, libsdl1.2-dev, libsdl-net1.2-dev, hildon-games-wrapper-dev, osso-games-startup-dev
+Standards-Version: 3.6.0
+
+
+Package: battlegweled
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, osso-games-startup
+Description: Fast action puzzle game
+ Swap jewels' positions to build up rows and columns as quickly as you can.
+ Play in single player mode or against another Maemo user over network.
+ Based on the famous game Bejeweled.
+XB-Maemo-Display-Name: Battle Gweled
+XB-Maemo-Upgrade-Description:
+ * Multiplayer over network with another Maemo user
+XB-Maemo-Icon-26:
+ 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
+ rkJggg==

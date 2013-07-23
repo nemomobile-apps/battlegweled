@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/bin/osso_games_startup @datadir@/battlegweled/battlegweled.conf
+
+exit 0

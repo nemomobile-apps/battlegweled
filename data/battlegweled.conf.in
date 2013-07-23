@@ -1,0 +1,14 @@
+# Battlegweled config file
+
+[Startup Entry]
+Name=battlegweled
+Version=@VERSION@
+Title=Battle Gweled
+GettextPackage=battlegweled
+PluginPath=@datadir@/battlegweled/battlegweled_single_plugin.so
+PluginMPCreatePath=@datadir@/battlegweled/battlegweled_mpcreate_plugin.so
+PluginMPJoinPath=@datadir@/battlegweled/battlegweled_mpjoin_plugin.so
+Image=@datadir@/battlegweled/pixmaps/games-startup-battlegweled.png 
+ServiceName=br.org.indt.battlegweled
+PathName=/br/org/indt/battlegweled
+InterfaceName=br.org.indt.battlegweled

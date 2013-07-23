@@ -1,0 +1,55 @@
+battlegweled (0.9) unstable; urgency=low
+
+  * Updated to Maemo 4.0.
+
+ -- Marcelo Lira <setanta@gmail.com>  Fri, 26 Oct 2007 13:10:00 -0300
+
+battlegweled (0.8) unstable; urgency=low
+
+  * Now _really_ updated to Maemo 2.0.
+
+ -- Eduardo Lima <eduardo.lima@indt.org.br>  Wed, 23 Aug 2006 18:52:28 -0300
+
+battlegweled (0.7) unstable; urgency=low
+
+  * Fixed plugin when saving multiplayer configurations.
+
+ -- Cidorvan dos Santos Leite <cidorvan.leite@indt.org>  Mon,  21 Aug 2006 10:36:00 -0300
+
+
+battlegweled (0.6) unstable; urgency=low
+
+  * Updated to Maemo 2.0.
+
+ -- Cidorvan dos Santos Leite <cidorvan.leite@indt.org>  Tue,  13 Jun 2006 14:33:00 -0300
+
+battlegweled (0.5) unstable; urgency=low
+
+  * Fixed some bugs.
+
+ -- Cidorvan dos Santos Leite <cidorvan.leite@indt.org>  Tue,  19 Jan 2006 16:00:00 -0300
+
+battlegweled (0.4) unstable; urgency=low
+
+  * Added players in multiplayer mode.
+
+ -- Cidorvan dos Santos Leite <cidorvan.leite@indt.org>  Wed,  18 Jan 2006 12:34:00 -0300
+
+battlegweled (0.3) unstable; urgency=low
+
+  * Fix screen update when it is turned off.
+
+ -- Cidorvan dos Santos Leite <cidorvan.leite@indt.org>  Fri,  25 Nov 2005 10:43:00 -0300
+
+battlegweled (0.2) unstable; urgency=low
+
+  * Add support for multiplayer with new games startup.
+
+ -- Cidorvan dos Santos Leite <cidorvan.leite@indt.org>  Fri,  18 Nov 2005 11:46:00 -0300
+
+battlegweled (0.1) unstable; urgency=low
+
+  * Initial release
+  * Debianized package
+
+ -- Cidorvan dos Santos Leite <cidorvan.leite@indt.org>  Mon,  23 May 2005 15:18:00 -0300
